@@ -1,0 +1,43 @@
+<template>
+<h3>生命周期钩子</h3>
+<p>{{msg}}</p>
+<button @click="bian">改变msg</button>
+</template>
+<script>
+export default{
+    data(){
+        return{
+            msg:"更新之前",
+        }
+    },
+    methods:{
+        bian(){
+            this.msg="更新之后"
+        }
+    },
+    beforeCreate(){
+        console.log("组件创建前");
+    },
+    created(){
+        console.log("组件创建后");
+    },
+    beforeMount(){
+        console.log("组件渲染前");
+    },
+    mounted(){
+        console.log("组件渲染后");
+    },
+    beforeUpdate(){
+        console.log("组件更新前");
+    },
+    updated(){
+        console.log("组件更新后");
+    },
+    beforeUnmount(){
+        console.log("组件销毁前");
+    },
+    unmounted(){
+        console.log("组件销毁后");
+    }
+}
+</script>
